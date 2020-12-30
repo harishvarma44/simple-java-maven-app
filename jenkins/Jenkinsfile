@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('SCM Checkout') {
             steps{
-               git credentialsId: 'git_credentials', url: 'https://github.com/harishvarma44/Jfrog1.git'
+               git credentialsId: 'git_credentials', url: 'https://github.com/harishvarma44/simple-java-maven-app.git'
                  }
             }  
         stage('Build') {
@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh '.simple-java-maven-app/jenkins/scripts/deliver.sh'
+                sh 'jenkins/scripts/deliver.sh'
             }
         }
     }
